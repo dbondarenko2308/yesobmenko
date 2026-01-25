@@ -1,0 +1,91 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.map {
+  margin-bottom: 161px;
+  position: relative;
+  z-index: 1;
+
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 64px;
+  }
+
+  
+  &__inner {
+    backdrop-filter: blur(67.0999984741211px);
+    background: linear-gradient(
+      180deg,
+      rgba(196, 255, 245, 0.5) 0%,
+      rgba(156, 229, 216, 0.5) 100%
+    );
+
+    padding: 64px;
+    border-radius: 24px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 16px 0;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 118%;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 14px;
+      max-width: 256px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    img {
+
+
+      &.mobile {
+        display: none;
+      }
+
+
+      @media only screen and (max-width: 991px) {
+        display: none;
+
+
+        &.mobile {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    max-width: 320px;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    margin-top: 40px;
+
+    @media only screen and (max-width: 991px) {
+      max-width: 272px;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@use '../../style/scss/variables.scss' as *;
+
+.footer {
+  flex-grow: 10;
+  width: 100%;
+  padding-bottom: 24px;
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  &__bg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 1920px;
+    height: 1500px;
+    bottom: -70%;
+
+    @media only screen and (max-width: 767px) {
+      left: -50%;
+      transform: translateX(-50%);
+      bottom: -63%;
+    }
+  }
+
+  &__inner {
+    box-shadow: 0 4px 12px 0 rgba(47, 47, 47, 0.1);
+    background: #fff;
+    padding: 24px;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: relative;
+    z-index: 11;
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__polyt {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-weight: 400;
+
+    margin-bottom: 16px;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    a {
+      font-size: 12px;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #9aa1b5;
+
+      &:hover {
+        color: $base-primery;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+
+    color: #9aa1b5;
+    max-width: 60%;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    @media only screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      justify-content: flex-start;
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        svg {
+          path {
+            fill: $base-primery;
+          }
+        }
+      }
+
+      svg {
+        path {
+          transition: 300ms;
+        }
+      }
+    }
+  }
+
+  &__copy {
+    text-align: right;
+    font-size: 14px;
+    color: #9aa1b5;
+
+    @media only screen and (max-width: 767px) {
+      text-align: left;
+    }
+  }
+}

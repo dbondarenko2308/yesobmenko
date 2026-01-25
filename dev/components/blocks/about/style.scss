@@ -1,0 +1,86 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.about {
+  margin-bottom: 65px;
+  position: relative;
+  z-index: 1;
+
+  
+
+  &__title {
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 64px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    @media only screen and (max-width: 1300px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    box-shadow: inset 0 8px 5px 0 rgba(255, 255, 255, 0.35);
+    background: linear-gradient(139deg, #c6fff5 0%, #29dfbe 100%);
+    border-radius: 20px;
+    border: 1px solid $base-primery;
+    min-height: 360px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 767px) {
+      min-height: 269px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-grow: 10;
+  }
+
+  &__head {
+    padding: 24px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 16px;
+    }
+
+    p {
+      font-size: 21px;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+
+    span {
+      display: block;
+      color: #313131;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
