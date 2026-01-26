@@ -539,9 +539,13 @@
 
     &__item {
       background: #fff;
-      padding: 20px 16px;
+      padding: 24px;
       margin-bottom: 12px;
       border-radius: 10px;
+
+      @media only screen and (max-width: 991px) {
+        padding: 16px;
+      }
     }
 
     &__head {
@@ -570,7 +574,6 @@
     }
 
     &__body {
-      margin-left: 20px;
       font-size: 14px;
 
       margin-top: 10px;
