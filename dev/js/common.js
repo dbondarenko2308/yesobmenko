@@ -121,4 +121,65 @@ $(document).ready(function() {
 		$(this).toggleClass('active')
 		$(this).next().toggleClass('active')
 	})
+
+	$('[data-rul]').on('click', function() {
+		if (!$(this).hasClass('active')) {
+			var index = $(this).index()
+			$(this).addClass('active').siblings().removeClass('active')
+			$('[data-rul-item]').removeClass('active').eq(index).addClass('active')
+		}
+		return false
+	})
+
+	$('.rules__head').on('click', function(e) {
+		$(this).toggleClass('active')
+		$(this).next().toggleClass('active')
+	})
+
+	$('.header__correct--btn').on('click', function(e) {
+		$(this).next().toggleClass('active')
+	})
+
+	$(function() {
+		var FULL_TIME = 30
+		var $circle = $('.showcase__course--number')
+		var $number = $('.showcase__course--number span')
+
+		var startTime = null
+
+		function animate(timestamp) {
+			if (!startTime) startTime = timestamp
+
+			var progress = (timestamp - startTime) / 1000
+			var percent = progress / FULL_TIME
+
+			if (percent <= 1) {
+				var deg = 360 * percent
+
+				$circle[0].style.setProperty('--progress', deg + 'deg')
+
+				var secondsLeft = Math.ceil(FULL_TIME - progress)
+				$number.text(secondsLeft)
+
+				requestAnimationFrame(animate)
+			} else {
+				startTime = null
+				requestAnimationFrame(animate)
+			}
+		}
+
+		requestAnimationFrame(animate)
+	})
+
+	$(function() {
+		var $select = $('.showcase__select')
+
+		$select.find('[data-select-name]').on('click', function() {
+			var text = $(this).text().trim()
+
+			$select.find('.showcase__select--name span').text(text)
+
+			$select.addClass('is-selected')
+		})
+	})
 })

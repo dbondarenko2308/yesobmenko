@@ -1,0 +1,29 @@
+.faq {
+  position: relative;
+  margin-bottom: 65px;
+  margin-top: 30px;
+
+  @media only screen and (max-width: 991px) {
+
+    .steps__bg {
+      display: flex;
+      width: 860px;
+      height: 860px;
+      top: -10%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    box-shadow: inset -5px 4px 12px 0 rgba(255, 255, 255, 0.25);
+    background: #e0f8f4;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+
+    @media only screen and (max-width: 991px) {
+      padding: 16px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.news {
+  position: relative;
+  margin-bottom: 65px;
+
+
+  @media only screen and (max-width: 991px) {
+    margin-top: 30px;
+
+    .steps__bg {
+      display: flex;
+      width: 860px;
+      height: 860px;
+      top: -10%;
+
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    font-size: 44px;
+    font-weight: 600;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+
+    @media only screen and (max-width: 1300px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    box-shadow: 0 4px 8px 0 rgba(0, 17, 8, 0.1);
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    transition: 300ms;
+    cursor: pointer;
+    overflow: hidden;
+
+    @media only screen and (max-width: 991px) {
+      padding: 16px;
+      position: relative;
+
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('/images/bg-bottom.png') 50% 50% no-repeat;
+        width: 170px;
+        height: 170px;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 17, 8, 0.1);
+      background: #c3f8ef;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__info {
+    flex-grow: 10;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+
+      @media only screen and (max-width: 991px) {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      @media only screen and (max-width: 991px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__date {
+    opacity: 0.7;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+}

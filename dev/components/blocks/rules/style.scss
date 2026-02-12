@@ -1,0 +1,132 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.rules {
+  margin-top: 60px;
+  margin-bottom: 65px;
+
+  @media only screen and (max-width: 991px) {
+    margin-top: 30px;
+  }
+
+  &__title {
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 72px;
+
+    @media only screen and (max-width: 991px) {
+      overflow: auto;
+      margin-right: -15px;
+      padding-right: 15px;
+      margin-bottom: 40px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    span {
+      border-radius: 12px;
+      padding: 6px 16px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 991px) {
+        flex-shrink: 0;
+        font-size: 14px;
+      }
+      &.active {
+        background: $base-primery;
+      }
+    }
+  }
+
+  &__items {
+    display: none;
+    box-shadow: 0 0 60px 0 rgba(0, 218, 178, 0.1);
+    background: #fff;
+    padding: 24px;
+    border-radius: 20px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    @media only screen and (max-width: 991px) {
+      align-items: flex-start;
+    }
+
+    &.active {
+      .rules__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 16px;
+      margin-right: 30px;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 300ms;
+  }
+
+  &__body {
+    margin-top: 20px;
+    opacity: 0.7;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &_label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  &__text {
+    opacity: 0.7;
+  }
+
+  &__aside {
+    font-size: 14px;
+  }
+}
